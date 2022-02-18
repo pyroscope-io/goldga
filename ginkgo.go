@@ -4,16 +4,16 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/onsi/ginkgo"
+	"github.com/onsi/ginkgo/v2"
 )
 
-func getCurrentGinkgoTestDescription() ginkgo.GinkgoTestDescription {
-	return ginkgo.CurrentGinkgoTestDescription()
+func getCurrentGinkgoTestDescription() ginkgo.SpecReport {
+	return ginkgo.CurrentSpecReport()
 }
 
 func getGinkgoPath() string {
 	desc := getCurrentGinkgoTestDescription()
-	path := desc.FileName
+	path := desc.FileName()
 
 	if path == "" {
 		panic("current file name is empty")
@@ -30,7 +30,7 @@ func getGinkgoPath() string {
 }
 
 func getGinkgoTestName() string {
-	testName := getCurrentGinkgoTestDescription().FullTestText
+	testName := getCurrentGinkgoTestDescription().FullText()
 
 	if testName == "" {
 		panic("current test name is empty")
