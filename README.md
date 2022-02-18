@@ -7,7 +7,7 @@ A golden file testing (snapshot testing) library for [gomega](http://onsi.github
 ## Installation
 
 ```sh
-go get github.com/tommy351/goldga
+go get github.com/pyroscope-io/goldga
 ```
 
 ## Usage
